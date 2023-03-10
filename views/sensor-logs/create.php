@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\SensorLogs $model */
 
-$this->title = 'Create Sensor Logs';
+$this->title = 'Agregar evento';
 $this->params['breadcrumbs'][] = ['label' => 'Sensor Logs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
