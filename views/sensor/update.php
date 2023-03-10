@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Sensor $model */
 
-$this->title = 'Update Sensor: ' . $model->id;
+$this->title = 'Actualizar Sensor: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Sensors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

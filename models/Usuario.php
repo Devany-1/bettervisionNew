@@ -8,14 +8,16 @@ use Yii;
  * This is the model class for table "usuario".
  *
  * @property int $id
- * @property string $user
- * @property string $pass
+ * @property string $username
+ * @property string $password
  * @property string $nombre
  * @property string $ap
  * @property string $am
  * @property int $id_perfil
  * @property string $correo
  * @property bool|null $activo
+ * @property string|null $accessToken
+ * @property string|null $authKey
  *
  * @property Perfil $perfil
  * @property UsuarioSensor[] $usuarioSensors
@@ -36,11 +38,11 @@ class Usuario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user', 'pass', 'nombre', 'ap', 'am', 'id_perfil', 'correo'], 'required'],
+            [['username', 'password', 'nombre', 'ap', 'am', 'id_perfil', 'correo'], 'required'],
             [['id_perfil'], 'integer'],
             [['activo'], 'boolean'],
-            [['user', 'nombre', 'ap', 'am'], 'string', 'max' => 50],
-            [['pass'], 'string', 'max' => 255],
+            [['username', 'password', 'accessToken', 'authKey'], 'string', 'max' => 255],
+            [['nombre', 'ap', 'am'], 'string', 'max' => 50],
             [['correo'], 'string', 'max' => 64],
             [['correo'], 'unique'],
             [['id_perfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::class, 'targetAttribute' => ['id_perfil' => 'id']],
@@ -54,14 +56,16 @@ class Usuario extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user' => 'User',
-            'pass' => 'Pass',
+            'username' => 'Username',
+            'password' => 'Password',
             'nombre' => 'Nombre',
             'ap' => 'Ap',
             'am' => 'Am',
             'id_perfil' => 'Id Perfil',
             'correo' => 'Correo',
             'activo' => 'Activo',
+            'accessToken' => 'Access Token',
+            'authKey' => 'Auth Key',
         ];
     }
 

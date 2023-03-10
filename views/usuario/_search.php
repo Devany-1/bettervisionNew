@@ -17,9 +17,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'user') ?>
+    <?= $form->field($model, 'username') ?>
 
-    <?= $form->field($model, 'pass') ?>
+    <?= $form->field($model, 'password') ?>
 
     <?= $form->field($model, 'nombre') ?>
 
@@ -32,6 +32,10 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'correo') ?>
 
     <?php // echo $form->field($model, 'activo')->checkbox() ?>
+
+    <?php // echo $form->field($model, 'accessToken') ?>
+
+    <?php // echo $form->field($model, 'authKey') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

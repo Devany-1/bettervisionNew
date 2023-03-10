@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Sensor $model */
 
-$this->title = 'Create Sensor';
+$this->title = 'Ingresa un Sensor';
 $this->params['breadcrumbs'][] = ['label' => 'Sensors', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

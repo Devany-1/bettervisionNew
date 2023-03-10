@@ -18,7 +18,7 @@ class UsuarioSearch extends Usuario
     {
         return [
             [['id', 'id_perfil'], 'integer'],
-            [['user', 'pass', 'nombre', 'ap', 'am', 'correo'], 'safe'],
+            [['username', 'password', 'nombre', 'ap', 'am', 'correo', 'accessToken', 'authKey'], 'safe'],
             [['activo'], 'boolean'],
         ];
     }
@@ -64,12 +64,14 @@ class UsuarioSearch extends Usuario
             'activo' => $this->activo,
         ]);
 
-        $query->andFilterWhere(['like', 'user', $this->user])
-            ->andFilterWhere(['like', 'pass', $this->pass])
+        $query->andFilterWhere(['like', 'username', $this->username])
+            ->andFilterWhere(['like', 'password', $this->password])
             ->andFilterWhere(['like', 'nombre', $this->nombre])
             ->andFilterWhere(['like', 'ap', $this->ap])
             ->andFilterWhere(['like', 'am', $this->am])
-            ->andFilterWhere(['like', 'correo', $this->correo]);
+            ->andFilterWhere(['like', 'correo', $this->correo])
+            ->andFilterWhere(['like', 'accessToken', $this->accessToken])
+            ->andFilterWhere(['like', 'authKey', $this->authKey]);
 
         return $dataProvider;
     }
