@@ -56,8 +56,11 @@ class SensorLogs extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+
     public function getSensor()
-    {
-        return $this->hasOne(Sensor::class, ['id' => 'id_sensor']);
-    }
+{
+    return $this->hasOne(Sensor::className(), ['id' => 'id_sensor']);
+}
+
+
 }

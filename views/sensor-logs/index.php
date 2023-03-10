@@ -1,6 +1,7 @@
 <?php
 
 use app\models\SensorLogs;
+use app\models\Sensor;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -17,15 +18,20 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
-            'id_sensor',
-            'evento',
-            'fecha_del_evento',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, SensorLogs $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
+    'dataProvider' => $dataProvider,
+    'columns' => [
+        'id_sensor',
+        'evento',
+        'fecha_del_evento',
+        [
+            'attribute' => 'Nombre del sensor',
+            'value' => 'sensor.nombre',
+        ],
+        [
+            'class' => ActionColumn::className(),
+            'urlCreator' => function ($action, SensorLogs $model, $key, $index, $column) {
+                return Url::toRoute([$action,
+'id' => $model->id]);
                  }
             ],
         ],
