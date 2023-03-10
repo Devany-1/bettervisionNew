@@ -8,6 +8,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use yii\filters\AccessControl;
+
 /**
  * SensorLogsController implements the CRUD actions for SensorLogs model.
  */
@@ -21,6 +23,17 @@ class SensorLogsController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+
+                'acess'=>[
+                    'class'=>AccessControl::className(),
+                    'rules'=>[
+                        [
+                            'allow'=>true,
+                            'roles'=>['@']
+                        ]
+                    ]
+                ],
+
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [

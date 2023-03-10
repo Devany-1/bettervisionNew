@@ -58,7 +58,7 @@ class Usuario extends \yii\db\ActiveRecord
             'id' => 'ID',
             'username' => 'Nombre de Usuario',
             'password' => 'Contraseña',
-            'nombre' => 'Nombre',
+            'nombre' => 'nombre',
             'ap' => 'Apellido paterno',
             'am' => 'Apellido materno',
             'id_perfil' => 'Id Perfil',
