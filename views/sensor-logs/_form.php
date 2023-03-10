@@ -16,7 +16,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'evento')->dropDownList([ 'apagado' => 'Apagado', 'encendido' => 'Encendido', 'movimiento' => 'Movimiento', ], ['prompt' => '']) ?>
 
-    <?= $form->field($model, 'fecha_del_evento')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
