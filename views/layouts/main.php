@@ -52,7 +52,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 !Yii::$app->user->isGuest ? (['label' => 'Sensores', 'url' => ['/sensor/index']]
                 ) : (''),
 
-                !Yii::$app->user->isGuest ? (['label' => 'Usuarios', 'url' => ['/usuario/index']]
+                !Yii::$app->user->isGuest && Yii::$app->user->identity->id_perfil== 2 
+                ? (['label' => 'Usuarios', 'url' => ['/usuario/index']]
                 ) : (''),
 
                 !Yii::$app->user->isGuest ? (['label' => 'Agregar Evento', 'url' => ['/sensor-logs/create']]
@@ -69,7 +70,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                     : '<li class="nav-item">'
                     . Html::beginForm(['/site/logout'])
                     . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->username . ')',
+                        'Logout (' . Yii::$app->user->identity->username . Yii::$app->user->identity->id_perfil . ')',
                         ['class' => 'nav-link btn btn-link logout']
                     )
                     . Html::endForm()
@@ -93,8 +94,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <footer id="footer" class="mt-auto py-3 bg-light">
         <div class="container">
             <div class="row text-muted">
-                <div class="col-md-6 text-center text-md-start">&copy; My Company <?= date('Y') ?></div>
-                <div class="col-md-6 text-center text-md-end"><?= Yii::powered() ?></div>
+                <div class="col-md-6 text-center text-md-start">&copy; Better Vision <?= date('Y') ?></div>
             </div>
         </div>
     </footer>

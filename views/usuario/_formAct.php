@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'am')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'id_perfil')->hiddenInput(['value' => 1])->label(false) ?>
+    <?= $form->field($model, 'id_perfil')->textInput()?>
 
     <?= $form->field($model, 'correo')->textInput(['maxlength' => true]) ?>
 
